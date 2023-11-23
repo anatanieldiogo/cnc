@@ -37,5 +37,13 @@ Sinta-se à vontade para contribuir para este projeto. Se você encontrar bugs, 
 
 Este projeto está em fase de desenvolvimento, atualmente implementando apenas o método de Bissecção para uma função predefinida:  f(x) = x^3 - 9x + 3. Como mencionado anteriormente, sua contribuição é muito bem-vinda. Fique à vontade para colaborar, sugerir melhorias ou adicionar funcionalidades. Juntos, podemos aprimorar e expandir esta calculadora de métodos numéricos. :)
 
+### Layout
+
+![Captura de tela de 2023-11-23 17-18-26](https://github.com/anatanieldiogo/cnc/assets/69877170/4bc18377-1d04-4d00-b1a9-18f43014a19d)
+
+
+![Captura de tela de 2023-11-23 17-18-47](https://github.com/anatanieldiogo/cnc/assets/69877170/03ff60bf-25fc-453d-b457-9a491b6793fa)
+
+![Captura de tela de 2023-11-23 17-18-59](https://github.com/anatanieldiogo/cnc/assets/69877170/026e07f7-2804-46e5-9091-51359b68e65d)
 
 
