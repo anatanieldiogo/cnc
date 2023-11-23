@@ -35,7 +35,7 @@ Sinta-se à vontade para contribuir para este projeto. Se você encontrar bugs, 
 
 ### Observações
 
-Este projeto ainda esta em desenvolvimento, no momento apenas realiza o método de Bissecção de uma função predefinida: f(x) = x^3 - 9x + 3, como mencionado acima a sua contribuição é bem-vinda :)
+Este projeto está em fase de desenvolvimento, atualmente implementando apenas o método de Bissecção para uma função predefinida:  f(x) = x^3 - 9x + 3. Como mencionado anteriormente, sua contribuição é muito bem-vinda. Fique à vontade para colaborar, sugerir melhorias ou adicionar funcionalidades. Juntos, podemos aprimorar e expandir esta calculadora de métodos numéricos. :)
 
 
 
