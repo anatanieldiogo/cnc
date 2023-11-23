@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cnc - Anataniel Diogo</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="fontawesome/css/all.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
+    <script src="js/jQuery.js"></script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-left">
+            <h1>Calculadora</h1>
+            <span>Anataniel Diogo</span>
+        </div>
+        <div class="header-right">
+            <button class="click" id="call-settings"><i class="fas fa-cog"></i></button>
+        </div>
+    </header>
+    <main class="container">
+        <section class="math-settings">
+            <div class="math-settings-header">
+                <h2>Bissecção</h2>
+                <span>CNC</span>
+            </div>
+
+            <div class="math-settings-form">
+                <div class="form-control">
+                    <input type="text" id="a_valor">
+                    <span>Valor inicial (a)</span>
+                </div>
+                <div class="form-control">
+                    <input type="text" id="b_valor">
+                    <span>Valor inicial (b)</span>
+                </div>
+                <div class="form-control">
+                    <input type="text" id="fx_funcao">
+                    <span>Função (f(x))</span>
+                </div>
+                <div class="form-control">
+                    <input type="text" id="mx_iteracao">
+                    <span>Número de iterações</span>
+                </div>
+                <div class="form-control">
+                    <input type="text" id="e_precisao">
+                    <span>Precisão (E)</span>
+                </div>
+            </div>
+            <div class="math-settings-form-submit">
+                <button class="click" id="calc">Calcular</button>
+            </div>
+        </section>
+
+        <section class="math-table-content">
+            <div class="message"></div>
+            <table id="math-result">
+                <thead>
+                    <tr>
+                        <th>K</th>
+                        <th>a</th>
+                        <th>b</th>
+                        <th>X<span>k</span> = (a+b) / 2</th>
+                        <th>f(X<span>k</span>)</th>
+                        <th>f (a) · f (X<span>k</span> )</th>
+                        <th>| b - a |</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+            <!-- <span>Raíz aproximada: </span> -->
+        </section>
+    </main>
+    <div class="settings">
+        <div class="settings-header">
+            <button class="click" id="close-settings"><i class="fas fa-chevron-left"></i></button>
+            <h2>Configurações</h2>
+        </div>
+        <div class="settings-body">
+            <div class="form-control">
+                <select name="" id="">
+                    <option value="">Bisseção</option>
+                    <option value="">Newton</option>
+                    <option value="">Secante</option>
+                </select>
+                <span>Método</span>
+            </div>
+            <div class="form-control">
+                <div class="form-control-radio number_limit">
+                    <label class="radio-content">
+                        <input type="radio" name="number_limit" value="30" checked />
+                        Todos
+                    </label>
+                    <label class="radio-content">
+                        <input type="radio" name="number_limit" value="3" />
+                        3
+                    </label>
+                    <label class="radio-content">
+                        <input type="radio" name="number_limit" value="5" />
+                        5
+                    </label>
+                    <label class="radio-content">
+                        <input type="radio" name="number_limit" value="7" />
+                        7
+                    </label>
+                </div>
+                <span>Limitar resultados</span>
+            </div>
+            <div class="form-control">
+                <div class="form-control-radio">
+                    <label class="radio-content">
+                        <input type="radio" name="tema" checked />
+                        Dark
+                    </label>
+                    <label class="radio-content">
+                        <input type="radio" name="tema" />
+                        Light
+                    </label>
+                </div>
+                <span>Tema</span>
+            </div>
+        </div>
+    </div>
+    <div class="method-info">
+        <div class="method-info-header settings-header " id="method-info-toggle">
+            <button class="click"><i class="fas fa-chevron-up"></i></button>
+            <div class="method-info-header-text">
+                <h2>Bissecção</h2>
+                <span>Definição</span>
+            </div>
+        </div>
+        <div class="method-info-body">
+            <div class="method-info-body-text">
+                <p>Seja f (x) uma função contínua no intervalo [a, b] e tal que f (a) · f (b) < 0, ou seja, f satisfaz
+                        as condições do Teorema 2. Suponha que o intervalo (a, b) contenha uma única raiz da equação f
+                        (x)=0. O objetivo deste método é reduzir a amplitude do intervalo que contém a raiz até se
+                        atingir a precisão requerida, neste caso (b - a) < ∈, usando para isto a sucessiva divisão de
+                        [a, b] ao meio. A Figura 3.6 mostra este processo. Os passos para a execução deste método são
+                        dados pelo Algoritmo 8.</p>
+            </div>
+            <div class="method-info-body-img">
+                <img src="/images/bicc.png" alt="">
+            </div>
+        </div>
+    </div>
+    <script src="js/app.js"></script>
+    <script src="js/scripts.js"></script>
+</body>
+
+</html>

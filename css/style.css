@@ -1,0 +1,398 @@
+:root {
+    --form-control-color: #00a2ffc0;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    /* user-select: none; 
+    -webkit-user-select: none;*/
+    background-color: #1C2131;
+    color: #BBC2DD;
+
+    font-family: 'Ubuntu', sans-serif;
+}
+
+
+.click {
+    cursor: pointer;
+    transition: .1s ease;
+}
+
+.click:active {
+    transform: scale(0.90);
+}
+
+.container {
+    margin: 0 88px;
+    position: relative;
+    margin-top: 120px;
+    padding-bottom: 65px;
+}
+
+.header {
+    width: 100%;
+    padding: 30px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1c21315e;
+    backdrop-filter: blur(25px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.header-left {
+    padding-left: 88px;
+}
+
+.header-right {
+    padding-right: 88px;
+}
+
+.header h1 {
+    font-size: 40px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 7px;
+}
+
+.header button {
+    background-color: transparent;
+    border: none;
+}
+
+.header button i {
+    color: #fff;
+    font-size: 16px;
+}
+
+.math-settings-header {
+    margin-bottom: 15px;
+}
+
+.math-settings-header h2 {
+    color: #fff;
+    margin-bottom: 2px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.math-settings-header span {
+    font-size: 12px;
+}
+
+.math-settings-form {
+    display: flex;
+    gap: 30px;
+}
+
+.form-control {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-control input {
+    background-color: #bbc2dd28;
+    border: none;
+    backdrop-filter: blur(4px);
+    margin-bottom: 7px;
+    outline: none;
+    color: #BBC2DD;
+    padding: 12px;
+    border-radius: 4px;
+}
+
+.form-control select {
+    background-color: #bbc2dd28;
+    border: none;
+    backdrop-filter: blur(4px);
+    margin-bottom: 7px;
+    outline: none;
+    color: #BBC2DD;
+    padding: 12px;
+    border-radius: 4px;
+}
+
+.form-control span {
+    font-size: 12px;
+}
+
+.math-settings-form-submit {
+    display: flex;
+    justify-content: flex-end;
+    margin: 15px 0;
+}
+
+.math-settings-form-submit button {
+    background-color: #00a2ffc0;
+    border: 2px solid #00a2ff75;
+    outline: none;
+    color: #fff;
+    padding: 7px 15px;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 16px;
+}
+.math-settings-form-submit button:disabled {
+    background-color: #5f6f79c0;
+    border: 2px solid #5f6f79d0;
+    outline: none;
+    color: #fff;
+    padding: 7px 15px;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.math-table-content {
+    margin-top: 30px;
+}
+
+#math-result {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    /* margin-bottom: 12px; */
+}
+
+#math-result thead {
+    text-align: left;
+    background-color: #bbc2dd28;
+    border: none;
+    color: #BBC2DD;
+    padding: 12px;
+    font-weight: 700;
+}
+
+#math-result thead span {
+    font-size: 10px;
+    font-weight: 200
+}
+
+#math-result td,
+#math-result th {
+    padding: 8px;
+}
+
+#math-result tr:nth-child(even) {
+    background-color: #bbc2dd28;
+}
+
+#math-result tbody tr {
+    animation: _blink .4s ease-in-out;
+    backdrop-filter: blur(25px);
+}
+
+#math-result tbody tr:hover {
+    background-color: #bbc2dd17;
+}
+
+.message {
+    display: block;
+    margin-bottom: 7px;
+}
+
+.success span {
+    color: rgb(0, 221, 85);
+}
+
+.danger {
+    color: rgb(221, 0, 74);
+}
+
+.settings {
+    width: 100%;
+    max-width: 320px;
+    height: 100vh;
+    background-color: #0a102728;
+    backdrop-filter: blur(20px);
+    border-left: 2px solid #0a102728;
+    position: fixed;
+    right: -320px;
+    /*-320px*/
+    top: 0;
+    transition: .3s ease;
+    z-index: 5;
+}
+
+.settings-header {
+    padding: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.settings-header h2 {
+    color: #fff;
+    margin-left: 7px;
+}
+
+.settings-header button {
+    background-color: transparent;
+    border: none;
+    padding: 5px;
+}
+
+.settings-header button i {
+    color: #fff;
+}
+
+.settings-body {
+    padding: 15px;
+}
+
+.settings-body .form-control {
+    margin-bottom: 30px;
+}
+
+.settings-body .form-control span {
+    margin-top: 7px;
+    display: block;
+}
+
+.form-control-radio {
+    display: flex;
+    gap: 20px;
+}
+
+.radio-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.radio-content:focus-within {
+    color: var(--form-control-color);
+}
+
+input[type="radio"] {
+    /* Add if not using autoprefixer */
+    -webkit-appearance: none;
+    /* Remove most all native input styles */
+    appearance: none;
+    /* For iOS < 15 */
+    background-color: var(--form-background);
+    /* Not removed via appearance */
+    margin: 0;
+
+    font: inherit;
+    color: currentColor;
+    width: 1.15em;
+    height: 1.15em;
+    border: 0.15em solid currentColor;
+    border-radius: 50%;
+    transform: translateY(-0.075em);
+
+    display: grid;
+    place-content: center;
+    cursor: pointer;
+}
+
+input[type="radio"]::before {
+    content: "";
+    width: 0.65em;
+    height: 0.65em;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em var(--form-control-color);
+    /* Windows High Contrast Mode */
+    background-color: CanvasText;
+}
+
+input[type="radio"]:checked::before {
+    transform: scale(1.5);
+}
+
+/* input[type="radio"]:focus {
+    outline: max(2px, 0.15em) solid currentColor;
+    outline-offset: max(2px, 0.15em);
+} */
+
+.method-info{
+    width: 100%;
+    max-width: 87%;
+    height: 350px;
+    background-color: #0a102728;
+    backdrop-filter: blur(20px);
+    border: 2px solid #0a102728;
+    border-bottom: 0;
+    position: fixed;
+    bottom: -288px;
+    transition: .3s ease;
+    z-index: 2;
+    left: 50%;
+    transform: translate(-50%, 0);
+    border-radius: 12px 12px 0 0;
+    overflow: hidden;
+}
+.method-info-up{
+    bottom: 0;
+}
+.method-info-up .method-info-header button i{
+    transform: rotate(180deg);
+}
+.method-info-header{
+    padding: 15px;
+    cursor: pointer;
+    user-select: none;
+}
+.method-info-header-text span{
+    margin-left: 7px;
+    font-size: 12px;
+}
+.method-info-header button i{
+    font-size: 18px;
+    transition: .3s ease;
+}
+.method-info-body{
+    height: calc(350px - 90px);
+    padding: 15px;
+    display: flex;
+    overflow: auto;
+}
+.method-info-body-text{
+    width: 50%;
+}
+.method-info-body-text p{
+    line-height: 25px;
+}
+.method-info-body-img{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.method-info-body-img img{
+    max-width: 100%;
+    object-fit: cover;
+    margin-bottom: 7px;
+}
+
+@keyframes _blink {
+    0% {
+        /* background-color: #bbc2dd30; */
+        transform: translateY(-25px);
+    }
+
+    /* 25% {
+        background-color: #819aff28;
+    }
+
+    35% {
+        background-color: #bbc2dd52;
+    }
+
+    50% {
+        background-color: #bbc2dd30;
+    } */
+
+    100% {
+        /* background-color: initial; */
+        transform: translateY(0);
+    }
+}
