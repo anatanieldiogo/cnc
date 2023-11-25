@@ -1,5 +1,30 @@
 :root {
     --form-control-color: #00a2ffc0;
+    --background-color: #1C2131;
+    --background-color-rgba: #1c21315e;
+    --color: #BBC2DD;
+    --white-color: #fff;
+    --input-color: #bbc2dd28;
+    --btn-primary-color: #00a2ffc0;
+    --btn-primary-color-border: #00a2ff75;
+    --btn-second-color: #5f6f79c0;
+    --btn-second-color-border: #5f6f79d0;
+    --table-hover-color: #bbc2dd17;
+    --green-color: rgb(0, 221, 85);
+    --red-color: rgb(221, 0, 74);
+    --float-background-color: #0a102728;
+    --float-border-color: #0a102728;
+}
+
+.light {
+    --background-color: #E5E9FA;
+    --background-color-rgba: transparent;
+    --color: #374162;
+    --white-color: #1C2131;
+    --input-color: #1c213152;
+    --table-hover-color: #1c213128;
+    --float-background-color: transparent;
+    --float-border-color: #8f97b917;
 }
 
 body {
@@ -7,8 +32,8 @@ body {
     margin: 0;
     /* user-select: none; 
     -webkit-user-select: none;*/
-    background-color: #1C2131;
-    color: #BBC2DD;
+    background-color: var(--background-color);
+    color: var(--color);
 
     font-family: 'Ubuntu', sans-serif;
 }
@@ -36,7 +61,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #1c21315e;
+    background-color: var(--background-color-rgba);
     backdrop-filter: blur(25px);
     position: fixed;
     top: 0;
@@ -55,7 +80,7 @@ body {
 .header h1 {
     font-size: 40px;
     font-weight: 700;
-    color: #fff;
+    color: var(--white-color);
     margin-bottom: 7px;
 }
 
@@ -65,7 +90,7 @@ body {
 }
 
 .header button i {
-    color: #fff;
+    color: var(--white-color);
     font-size: 16px;
 }
 
@@ -74,7 +99,7 @@ body {
 }
 
 .math-settings-header h2 {
-    color: #fff;
+    color: var(--white-color);
     margin-bottom: 2px;
     font-size: 20px;
     font-weight: 700;
@@ -96,23 +121,23 @@ body {
 }
 
 .form-control input {
-    background-color: #bbc2dd28;
+    background-color: var(--input-color);
     border: none;
     backdrop-filter: blur(4px);
     margin-bottom: 7px;
     outline: none;
-    color: #BBC2DD;
+    color: var(--color);
     padding: 12px;
     border-radius: 4px;
 }
 
 .form-control select {
-    background-color: #bbc2dd28;
+    background-color: var(--input-color);
     border: none;
     backdrop-filter: blur(4px);
     margin-bottom: 7px;
     outline: none;
-    color: #BBC2DD;
+    color: var(--color);
     padding: 12px;
     border-radius: 4px;
 }
@@ -128,20 +153,20 @@ body {
 }
 
 .math-settings-form-submit button {
-    background-color: #00a2ffc0;
-    border: 2px solid #00a2ff75;
+    background-color: var(--btn-primary-color);
+    border: 2px solid var(--btn-primary-color-border);
     outline: none;
-    color: #fff;
+    color: var(--white-color);
     padding: 7px 15px;
     border-radius: 4px;
     font-weight: 700;
     font-size: 16px;
 }
 .math-settings-form-submit button:disabled {
-    background-color: #5f6f79c0;
-    border: 2px solid #5f6f79d0;
+    background-color: var(--btn-second-color);
+    border: 2px solid var(--btn-second-color-border);
     outline: none;
-    color: #fff;
+    color: var(--white-color);
     padding: 7px 15px;
     border-radius: 4px;
     font-weight: 700;
@@ -161,9 +186,9 @@ body {
 
 #math-result thead {
     text-align: left;
-    background-color: #bbc2dd28;
+    background-color: var(--input-color);
     border: none;
-    color: #BBC2DD;
+    color: var(--color);
     padding: 12px;
     font-weight: 700;
 }
@@ -179,7 +204,7 @@ body {
 }
 
 #math-result tr:nth-child(even) {
-    background-color: #bbc2dd28;
+    background-color: var(--input-color);
 }
 
 #math-result tbody tr {
@@ -188,7 +213,7 @@ body {
 }
 
 #math-result tbody tr:hover {
-    background-color: #bbc2dd17;
+    background-color: var(--table-hover-color);
 }
 
 .message {
@@ -197,20 +222,20 @@ body {
 }
 
 .success span {
-    color: rgb(0, 221, 85);
+    color: var(--green-color);
 }
 
 .danger {
-    color: rgb(221, 0, 74);
+    color: var(--red-color);
 }
 
 .settings {
     width: 100%;
     max-width: 320px;
     height: 100vh;
-    background-color: #0a102728;
+    background-color: var(--float-background-color);
     backdrop-filter: blur(20px);
-    border-left: 2px solid #0a102728;
+    border-left: 2px solid var(--float-border-color);
     position: fixed;
     right: -320px;
     /*-320px*/
@@ -226,7 +251,7 @@ body {
 }
 
 .settings-header h2 {
-    color: #fff;
+    color: var(--white-color);
     margin-left: 7px;
 }
 
@@ -237,7 +262,7 @@ body {
 }
 
 .settings-header button i {
-    color: #fff;
+    color: var(--white-color);
 }
 
 .settings-body {
@@ -316,9 +341,9 @@ input[type="radio"]:checked::before {
     width: 100%;
     max-width: 87%;
     height: 350px;
-    background-color: #0a102728;
+    background-color: var(--float-background-color);
     backdrop-filter: blur(20px);
-    border: 2px solid #0a102728;
+    border: 2px solid var(--float-border-color);
     border-bottom: 0;
     position: fixed;
     bottom: -288px;

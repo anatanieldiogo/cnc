@@ -52,7 +52,7 @@
                 </div>
                 <div class="form-control">
                     <input type="text" id="e_precisao">
-                    <span>Precisão (E)</span>
+                    <span>Precisão (∈)</span>
                 </div>
             </div>
             <div class="math-settings-form-submit">
@@ -98,32 +98,32 @@
             <div class="form-control">
                 <div class="form-control-radio number_limit">
                     <label class="radio-content">
-                        <input type="radio" name="number_limit" value="30" checked />
+                        <input type="radio" name="number_limit" data-val="25" value="25" checked />
                         Todos
                     </label>
                     <label class="radio-content">
-                        <input type="radio" name="number_limit" value="3" />
+                        <input type="radio" name="number_limit" data-val="3" value="3" />
                         3
                     </label>
                     <label class="radio-content">
-                        <input type="radio" name="number_limit" value="5" />
+                        <input type="radio" name="number_limit" data-val="5" value="5" />
                         5
                     </label>
                     <label class="radio-content">
-                        <input type="radio" name="number_limit" value="7" />
+                        <input type="radio" name="number_limit" data-val="7" value="7" />
                         7
                     </label>
                 </div>
                 <span>Limitar resultados</span>
             </div>
             <div class="form-control">
-                <div class="form-control-radio">
+                <div class="form-control-radio theme">
                     <label class="radio-content">
-                        <input type="radio" name="tema" checked />
+                        <input type="radio" name="theme" id="darktheme" checked />
                         Dark
                     </label>
                     <label class="radio-content">
-                        <input type="radio" name="tema" />
+                        <input type="radio" name="theme" id="lighttheme" />
                         Light
                     </label>
                 </div>

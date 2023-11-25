@@ -22,7 +22,7 @@ function metodoBisseccao(a, b, f, max, E) {
             $('.message').html(`<span class="message success">Raiz aproximada: <span>${limitarCasasDecimais(xk, numberLimit)}</span> <br> encontrada na iteração: ${k} de ${max}</span>`);
             
             //$('#calc').prop('disabled', true);
-            //break
+            break
         }else{
             $('.message').html(`<span class="message danger">Ops! O método não converge para a solução.! <br> Por favor, verifique as entradas e tente novamente.</span>`);
 
