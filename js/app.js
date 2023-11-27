@@ -44,17 +44,39 @@ function metodoBisseccao(a, b, f, max, E) {
 
 $('#calc').click(function (e) {
     e.preventDefault();
-    $('#math-result tbody').empty();
-
-    const f = x => Math.pow(x,3) - 9*x + 3; //f(x) = x^3 - 9x + 3
-    const a = parseFloat(document.getElementById('a_valor').value.replace(",", '.'));
-    const b = parseFloat(document.getElementById('b_valor').value.replace(",", '.'));
-    const max = parseInt(document.getElementById('mx_iteracao').value);
-    const E = parseFloat(document.getElementById('e_precisao').value.replace(",", '.'));//precisao (∈)
-
+    clearTable()
     numberLimit = localStorage.getItem('numberLimit') || 25;
-    metodoBisseccao(a, b, f, max, E);
+    
+    switch (localStorage.getItem('method')) {
+      case '0':
+        setValuesBisseccao()
+        break;
+      case '1':
+        alert('O médoto de Newton ainda está em desenvolvimento!')
+        break;
+      case '2':
+        alert('O médoto de Secante ainda está em desenvolvimento!')
+        break;
+    
+      default:
+        alert('O médoto selecionado não foi encontrado!')
+        break;
+    }
 });
+
+function clearTable(){
+  $('#math-result tbody').empty();
+}
+
+function setValuesBisseccao(){
+  const f = x => Math.pow(x,3) - 9*x + 3; //f(x) = x^3 - 9x + 3
+  const a = parseFloat(document.getElementById('a_valor').value.replace(",", '.'));
+  const b = parseFloat(document.getElementById('b_valor').value.replace(",", '.'));
+  const max = parseInt(document.getElementById('mx_iteracao').value);
+  const E = parseFloat(document.getElementById('e_precisao').value.replace(",", '.'));//precisao (∈)
+
+  metodoBisseccao(a, b, f, max, E);
+}
 $('.header-left span').html('Anataniel Diogo');
 
 function animation(k, a, b, xk, fk, fa_fxk, b_a){

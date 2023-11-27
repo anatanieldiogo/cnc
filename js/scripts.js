@@ -23,6 +23,7 @@ $('#close-settings').click(function (e) {
 $('#method-info-toggle').click(function (e) { 
   e.preventDefault();
 
+  $('.settings').css('right', '');
   $('.method-info').toggleClass('method-info-up')
 });
 
@@ -67,8 +68,49 @@ $('#lighttheme').click(function (e) {
 //   }
 // }
 
+var tabspanel = document.querySelectorAll(".panel-content .panel");
+var tablepanel = document.querySelectorAll(".table-panel-content .table-panel");
+var methodinfopanel = document.querySelectorAll(".method-info-panel-content .method-info-panel");
 
+function tabmenu(menuIndex) {
+  
+  tabspanel.forEach(function (node) {
+      node.style.display = "none";
+  })
+  tabspanel[menuIndex].style.display = "flex";
 
+  tablepanel.forEach(function (node) {
+      node.style.display = "none";
+  })
+  tablepanel[menuIndex].style.display = "";
+
+  methodinfopanel.forEach(function (node) {
+      node.style.display = "none";
+  })
+  methodinfopanel[menuIndex].style.display = "";
+
+}
+
+if(localStorage.getItem('method') == null || localStorage.getItem('method') == ''){
+  localStorage.setItem('method', 0);
+  tabmenu(0)
+}else{
+  tabmenu(localStorage.getItem('method'))
+
+  $('#method option[value="' + localStorage.getItem('method') + '"]').prop('selected', true)
+
+  $('#atual-method').html($('#method option:selected').text())
+  $('#atual-method-info').html($('#method option:selected').text())
+}
+
+$('#method').change(function (e) { 
+  e.preventDefault();
+  clearTable()
+  localStorage.setItem('method', $(this).val());
+  tabmenu($(this).val())
+  $('#atual-method').html($('#method option:selected').text())
+  $('#atual-method-info').html($('#method option:selected').text())
+});
 
 
 

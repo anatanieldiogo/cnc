@@ -29,30 +29,76 @@
     <main class="container">
         <section class="math-settings">
             <div class="math-settings-header">
-                <h2>Bissecção</h2>
+                <h2 id="atual-method">Bissecção</h2>
                 <span>CNC</span>
             </div>
 
-            <div class="math-settings-form">
-                <div class="form-control">
-                    <input type="text" id="a_valor">
-                    <span>Valor inicial (a)</span>
+            <div class="panel-content">
+                <div class="math-settings-form panel" id="bisseccao">
+                    <div class="form-control">
+                        <input type="text" id="a_valor" value="0">
+                        <span>Valor inicial (a)</span>
+                    </div>
+                    <div class="form-control">
+                        <input type="text" id="b_valor" value="1">
+                        <span>Valor inicial (b)</span>
+                    </div>
+                    <div class="form-control">
+                        <input type="text" id="fx_funcao">
+                        <span>Função (f(x))</span>
+                    </div>
+                    <div class="form-control">
+                        <input type="text" id="mx_iteracao" value="10">
+                        <span>Número de iterações</span>
+                    </div>
+                    <div class="form-control">
+                        <input type="text" id="e_precisao" value="0.001">
+                        <span>Precisão (∈)</span>
+                    </div>
                 </div>
-                <div class="form-control">
-                    <input type="text" id="b_valor">
-                    <span>Valor inicial (b)</span>
+                <div class="math-settings-form panel" id="newton">
+                    <div class="form-control">
+                        <input type="text" id="">
+                        <span>Valor inicial (X0)</span>
+                    </div>
+                    <div class="form-control">
+                        <input type="text" id="">
+                        <span>Função (f(x))</span>
+                    </div>
+                    <div class="form-control">
+                        <input type="text" id="">
+                        <span>Função (f'(x))</span>
+                    </div>
+                    <div class="form-control">
+                        <input type="text" id="">
+                        <span>Número de iteraçõe</span>
+                    </div>
+                    <div class="form-control">
+                        <input type="text" id="">
+                        <span>Precisão (∈)</span>
+                    </div>
                 </div>
-                <div class="form-control">
-                    <input type="text" id="fx_funcao">
-                    <span>Função (f(x))</span>
-                </div>
-                <div class="form-control">
-                    <input type="text" id="mx_iteracao">
-                    <span>Número de iterações</span>
-                </div>
-                <div class="form-control">
-                    <input type="text" id="e_precisao">
-                    <span>Precisão (∈)</span>
+                <div class="math-settings-form panel" id="secante">
+                    <div class="form-control">
+                        <input type="text" id="a_valor">
+                        <span>Valor inicial (X0)</span>
+                    </div>
+                    <div class="form-control">
+                        <input type="text" id="">
+                        <span>Valor inicial (X1)</span>
+                    </div>
+                    <div class="form-control">
+                        <input type="text" id="">
+                        <span>Função (f(x))</span>
+                    </div>
+                    <div class="form-control">
+                        <input type="text" id="">
+                        <span>Número de iterações</span>
+                    </div>
+                    <div class="form-control">
+                        <input type="text" id="">
+                        <span>Precisão (∈)</span>
+                    </div>
                 </div>
             </div>
             <div class="math-settings-form-submit">
@@ -62,22 +108,53 @@
 
         <section class="math-table-content">
             <div class="message"></div>
-            <table id="math-result">
-                <thead>
-                    <tr>
-                        <th>K</th>
-                        <th>a</th>
-                        <th>b</th>
-                        <th>X<span>k</span> = (a+b) / 2</th>
-                        <th>f(X<span>k</span>)</th>
-                        <th>f (a) · f (X<span>k</span> )</th>
-                        <th>| b - a |</th>
-                    </tr>
-                </thead>
-                <tbody>
+            <div class="table-panel-content">
+                <table class="table-panel bisseccao" id="math-result">
+                    <thead>
+                        <tr>
+                            <th>K</th>
+                            <th>a</th>
+                            <th>b</th>
+                            <th>X<span>k</span> = (a+b) / 2</th>
+                            <th>f(X<span>k</span>)</th>
+                            <th>f (a) · f (X<span>k</span> )</th>
+                            <th>| b - a |</th>
+                        </tr>
+                    </thead>
+                    <tbody>
 
-                </tbody>
-            </table>
+                    </tbody>
+                </table>
+                <table class="table-panel newton" id="math-result">
+                    <thead>
+                        <tr>
+                            <th>K</th>
+                            <th>X<span>k</span></th>
+                            <th>f(X<span>k</span>)</th>
+                            <th>f'(X<span>k</span>)</th>
+                            <th>| X<span>k+1</span> - X<span>k</span> |</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+                <table class="table-panel secante" id="math-result">
+                    <thead>
+                        <tr>
+                            <th>K</th>
+                            <th>X<span>k-1</span></th>
+                            <th>X<span>k</span></th>
+                            <th>f(X<span>k-1</span>)</th>
+                            <th>f(X<span>k</span>)</th>
+                            <th>| X<span>k+1</span> - X<span>k</span> |</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
             <!-- <span>Raíz aproximada: </span> -->
         </section>
     </main>
@@ -88,10 +165,10 @@
         </div>
         <div class="settings-body">
             <div class="form-control">
-                <select name="" id="">
-                    <option value="">Bisseção</option>
-                    <option value="">Newton</option>
-                    <option value="">Secante</option>
+                <select name="" id="method">
+                    <option value="0">Bisseção</option>
+                    <option value="1">Newton</option>
+                    <option value="2">Secante</option>
                 </select>
                 <span>Método</span>
             </div>
@@ -135,21 +212,83 @@
         <div class="method-info-header settings-header " id="method-info-toggle">
             <button class="click"><i class="fas fa-chevron-up"></i></button>
             <div class="method-info-header-text">
-                <h2>Bissecção</h2>
+                <h2 id="atual-method-info">Bissecção</h2>
                 <span>Definição</span>
             </div>
         </div>
-        <div class="method-info-body">
-            <div class="method-info-body-text">
-                <p>Seja f (x) uma função contínua no intervalo [a, b] e tal que f (a) · f (b) < 0, ou seja, f satisfaz
-                        as condições do Teorema 2. Suponha que o intervalo (a, b) contenha uma única raiz da equação f
-                        (x)=0. O objetivo deste método é reduzir a amplitude do intervalo que contém a raiz até se
-                        atingir a precisão requerida, neste caso (b - a) < ∈, usando para isto a sucessiva divisão de
-                        [a, b] ao meio. A Figura 3.6 mostra este processo. Os passos para a execução deste método são
-                        dados pelo Algoritmo 8.</p>
+        <div class="method-info-panel-content">
+            <div class="method-info-body method-info-panel">
+                <div class="method-info-body-text">
+                    <p>Seja f (x) uma função contínua no intervalo [a, b] e tal que f (a) · f (b) < 0, ou seja, f
+                            satisfaz as condições do Teorema 2. Suponha que o intervalo (a, b) contenha uma única raiz
+                            da equação f (x)=0. O objetivo deste método é reduzir a amplitude do intervalo que contém a
+                            raiz até se atingir a precisão requerida, neste caso (b - a) < ∈, usando para isto a
+                            sucessiva divisão de [a, b] ao meio. A Figura 3.6 mostra este processo. Os passos para a
+                            execução deste método são dados pelo Algoritmo 8.</p>
+                </div>
+                <div class="method-info-body-img">
+                    <img src="/images/bicc.png" alt="">
+                </div>
             </div>
-            <div class="method-info-body-img">
-                <img src="/images/bicc.png" alt="">
+            <div class="method-info-body method-info-panel">
+                <div class="method-info-body-text">
+                    <p>Isaac Newton (1642–1727) publicou seu método para encontrar raízes de equações não-lineares em
+                        1687. Este
+                        método também é conhecido como Newton-Raphson, devido à sistematização apresentada por Joseph
+                        Raphson
+                        em 1690.
+                        O método de Newton combina duas idéias comuns nas aproximações numéricas: <b>linearização</b> e
+                        <b>iteração</b>. A
+                        linearização substitui a curva y = f (x) por sua reta tangente.
+                        Seja x0 uma aproximação inicial da raiz, como ilustra a Figura 3.7. Aproximando a curva y = f
+                        (x) por sua reta
+                        tangente traçada no ponto (x0, f (x0)) obtemos a aproximação linear. Encontrando o ponto de
+                        intersecção desta
+                        reta com o eixo x, obteremos uma nova aproximação para a raiz, o ponto x1 da figura.
+                    </p>
+                </div>
+                <div class="method-info-body-img">
+                    <img src="/images/newton.png" alt="">
+                </div>
+            </div>
+            <div class="method-info-body method-info-panel">
+                <div class="method-info-body-text">
+                    <p>Uma grande desvantagem do método de Newton é a necessidade de se obter f'(x) e calcular seu valor
+                        numérico
+                        a cada iteração. Uma alternativa é usar retas secantes como aproximações lineares locais da
+                        função, em vez de
+                        tangentes. Neste caso, são ecessárias duas aproximações para inicializarmos o processo, x0 e x1.
+                    </p>
+                    <p>No método da Secante, tomamos a reta que passa pelos pontos (x0, f (x0)) e (x1, f (x1)) como uma
+                        aproximação
+                        linear da curva y = f (x), como indica a Figura 3.8.</p>
+                    <p>Para estabelecermos a relação de recorrância do método da Secantes, usamos a semelhança de
+                        triângulo ABC
+                        e AED: <b>Figura: 3.9</b></p>
+                    <p>onde x2 é o ponto denotado por A na Figura 3.8. Explicitando o valor da icógnita x2 teremos:
+                        <b>Figura: 3.10</b>
+                    </p>
+                    <p>Generalizando, no método das secantes usamos duas aproximações xk-1 e xk , para calcular uma
+                        nova aproximação xk+1, através da fórmula: <b>Figura: 3.11</b></p>
+                </div>
+                <div class="method-info-body-img">
+                    <div>
+                        <b>Figura: 3.8</b>
+                        <img src="/images/secante.png" alt="">
+                    </div>
+                    <div>
+                        <b>Figura: 3.9</b>
+                        <img src="/images/seante_3_9.png" alt="">
+                    </div>
+                    <div>
+                        <b>Figura: 3.10</b>
+                        <img src="/images/secante_3_10.png" alt="">
+                    </div>
+                    <div>
+                        <b>Figura: 3.11</b>
+                        <img src="/images/secante_3_11.png" alt="">
+                    </div>
+                </div>
             </div>
         </div>
     </div>
