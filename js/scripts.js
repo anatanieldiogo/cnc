@@ -13,6 +13,7 @@ $('.number_limit input').click(function (e) {
 $('#call-settings').click(function (e) { 
     e.preventDefault();
     $('.settings').css('right', 0);
+    $('.method-info').removeClass('method-info-up');
 });
 
 $('#close-settings').click(function (e) { 

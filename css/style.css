@@ -112,15 +112,18 @@ body {
 .math-settings-form {
     display: flex;
     gap: 30px;
+    flex-wrap: wrap;
 }
 
 .form-control {
-    width: 100%;
+    width: calc(20.5% - 30px);
+    max-width: 100%;
     display: flex;
     flex-direction: column;
 }
 
 .form-control input {
+    flex: 1;
     background-color: var(--input-color);
     border: none;
     backdrop-filter: blur(4px);
@@ -183,7 +186,12 @@ body {
     width: 100%;
     /* margin-bottom: 12px; */
 }
-
+.table-panel-content{
+    overflow: auto;
+}
+.table-panel-content table{
+    white-space: nowrap;
+}
 #math-result thead {
     text-align: left;
     background-color: var(--input-color);
@@ -271,6 +279,7 @@ body {
 }
 
 .settings-body .form-control {
+    width: 100%;
     margin-bottom: 30px;
 }
 
@@ -357,7 +366,7 @@ input[type="radio"]:checked::before {
     user-select: none;
 }
 .method-info-up{
-    bottom: 0;
+    bottom: 0!important;
 }
 .method-info-up .method-info-header button i{
     transform: rotate(180deg);
@@ -430,5 +439,50 @@ input[type="radio"]:checked::before {
     100% {
         /* background-color: initial; */
         transform: translateY(0);
+    }
+}
+
+/** RESPONSIVIDADE*/
+@media (max-width: 900px) {
+    .math-settings-form .form-control{
+        width: calc(52% - 30px);
+    }
+}
+@media (max-width: 720px) {
+    .container{
+        margin: 0 20px;
+        margin-top: 120px;
+    }
+    .math-settings-form .form-control{
+        width: 100%;
+    }
+    .method-info-body{
+        flex-direction: column;
+    }
+    .method-info-body-text{
+        width: 100%;
+    }
+    .method-info-body-img{
+        width: 100%;
+    }
+    .method-info{
+        max-width: 92%;
+    }
+    .header-left{
+        padding-left: 20px;
+    }
+    .header-right{
+        padding-right: 20px;
+    }
+    .header h1{
+        font-size: 30px;
+    }
+}
+@media (max-width: 500px) {
+    .header{
+        padding: 15px 0;
+    }
+    .container{
+        margin-top: 97px;
     }
 }
